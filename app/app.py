@@ -10,13 +10,11 @@ import torch
 app = Flask(__name__)
 
 def load_llm():
-    llm = CTransformers(
-        model= "models/llama-2-7b-chat.ggmlv3.q8_0.bin",
-        model_type="llama",
-        n_gpu_layers=32,
-        n_batch=512,
-        verbose=True,
-    )
+    llm = LlamaCpp(
+    model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin",
+    n_gpu_layers=32,
+    n_batch=512,
+    verbose=True)
     return llm
 
 def get_result(prompt, content):
