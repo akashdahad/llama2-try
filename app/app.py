@@ -22,7 +22,7 @@ def load_llm():
 def get_result(prompt, content):
   llm = load_llm()
   print(prompt, content)
-  template = PromptTemplate(template=template, input_variables=["question"])
+  template = PromptTemplate(template=content, input_variables=["question"])
   llm_chain = LLMChain(prompt=template, llm=llm)
   result = llm_chain.run(prompt)
   print(result)
