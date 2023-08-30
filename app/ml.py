@@ -45,7 +45,9 @@ def load_llm():
     verbose=False)
     return llm
 
-def load_pipeline():
+def load_pipeline(all_splits):
+    vectorstore = Chroma.from_documents(documents=all_splits, embedding=embed_model)
+    docs = vectorstore.similarity_search(question)
     rag_pipeline = RetrievalQA.from_chain_type(
     llm=llm, chain_type='stuff',
     retriever=vectorstore.as_retriever())
@@ -64,8 +66,7 @@ def answer():
     print(data)
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
     all_splits = text_splitter.split_documents(data)
-    docs = vectorstore.similarity_search(question)
-    vectorstore = Chroma.from_documents(documents=all_splits, embedding=embed_model)
+    rag_pipeline = load_pipeline(all_splits)
     result = rag_pipeline("what accelerators did quadratic build") #Add body['prompt'] here
     return result
 
@@ -80,7 +81,6 @@ if __name__ == "__main__":
     else:
         print("No GPU detected. Using CPU.")
     llm = load_llm()
-    rag_pipeline = load_pipeline()
 
     
     app.run(host="0.0.0.0", port=5005)
