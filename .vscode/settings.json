@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["jsonify", "langchain", "llms"]
+  "cSpell.words": [
+    "huggingface",
+    "jsonify",
+    "langchain",
+    "llms",
+    "vectorstore",
+    "vectorstores"
+  ]
 }
