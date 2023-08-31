@@ -36,7 +36,7 @@ if __name__ == "__main__":
     n_batch = 512  # Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.
     callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
     # Load Model
-    llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q2_K.bin", n_gpu_layers=n_gpu_layers, n_batch=n_batch, n_ctx=2048, f16_kv=True, callback_manager=callback_manager, verbose=False)
+    llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin", n_gpu_layers=n_gpu_layers, n_batch=n_batch, n_ctx=2048, f16_kv=True, callback_manager=callback_manager, verbose=False)
     # Embedding Model Details
     embed_model_id = 'sentence-transformers/all-MiniLM-L6-v2'
     embed_model = HuggingFaceEmbeddings(model_name=embed_model_id, model_kwargs={'device': device}, encode_kwargs={'device': device, 'batch_size': 32})
