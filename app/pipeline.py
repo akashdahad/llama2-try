@@ -19,21 +19,9 @@ def home():
 @app.route('/llm', methods = ['POST'])
 def answer():
     body = request.get_json()
-    arr = ['./india.txt', './china.txt']
-    # Load Data
-    data = []
-    for d in arr:
-        loader = UnstructuredFileLoader(d)
-        data.append(loader.load()[0])
-    # Split Data
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
-    all_splits = text_splitter.split_documents(data)
-    print(len(all_splits))
     # Define Question
     question = body['prompt']
     # Define Store and Retrieve
-    vectorstore = Chroma.from_documents(documents=all_splits, embedding=embed_model)
-    rag_pipeline = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever=vectorstore.as_retriever())
     result = rag_pipeline(question)
     print(result)
     return result
@@ -52,4 +40,18 @@ if __name__ == "__main__":
     # Embedding Model Details
     embed_model_id = 'sentence-transformers/all-MiniLM-L6-v2'
     embed_model = HuggingFaceEmbeddings(model_name=embed_model_id, model_kwargs={'device': device}, encode_kwargs={'device': device, 'batch_size': 32})
+    arr = ['./india.txt', './china.txt']
+    # Load Data
+    data = []
+    for d in arr:
+        loader = UnstructuredFileLoader(d)
+        data.append(loader.load()[0])
+    # Split Data
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
+    all_splits = text_splitter.split_documents(data)
+    print(len(all_splits))
+    vectorstore = Chroma.from_documents(documents=all_splits, embedding=embed_model)
+    rag_pipeline = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever=vectorstore.as_retriever())
+    
+    # Start
     app.run(host="0.0.0.0", port=5005)
