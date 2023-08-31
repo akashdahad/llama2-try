@@ -44,7 +44,7 @@ if __name__ == "__main__":
         print(f"GPU Detected: {device}")
     else:
         print("No GPU detected. Using CPU.")
-    n_gpu_layers = 32  # Metal set to 1 is enough.
+    n_gpu_layers = 35  # Metal set to 1 is enough.
     n_batch = 512  # Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.
     callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
     # Load Model
