@@ -118,7 +118,7 @@ class FilePayload(BaseModel):
     file_url: str
 
 @app.get("/")
-def read_root():
+def Home():
     return {"Hello": "World"}
 
 @app.post("/search")
@@ -127,7 +127,7 @@ def search(payload: SearchPayload):
     return results
 
 @app.post("/answer")
-def search(payload: SearchPayload):
+def answer(payload: SearchPayload):
     answer_prompt_template = """ You are very intelligent person. Understand the context provided. And answer the following question. But dont go out of the context. Context : {context} Question:  {question} Answer :  . Return a string which is answer"""
     content = ''
     results = get_search_results(payload.query)
@@ -137,7 +137,7 @@ def search(payload: SearchPayload):
     return answer
 
 @app.post("/llm")
-def search(payload: LLMPayload):
+def llm(payload: LLMPayload):
     content = ''
     results = get_search_results(payload.query)
     for result in results:
@@ -145,14 +145,13 @@ def search(payload: LLMPayload):
     answer = get_answer_from_llm(payload.template, content, payload.query)
     return answer
 
-
 @app.post("/file/content")
-def search(payload: FilePayload):
+def fileContent(payload: FilePayload):
     result = extract_data_from_file(payload.file_url)
     return result
 
 @app.post("/file/content/storeEmbeddings")
-def search(payload: FilePayload):
+def storeFileEmbeddings(payload: FilePayload):
     result = extract_data_from_file_array(payload.file_url)
     embeddings = create_embeddings(result.content)
     result_store = store_embeddings(result.content, embeddings)
