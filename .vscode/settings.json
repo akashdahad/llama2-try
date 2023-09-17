@@ -1,9 +1,18 @@
 {
   "cSpell.words": [
+    "devadmin",
+    "docstore",
+    "fastapi",
     "huggingface",
     "jsonify",
     "langchain",
     "llms",
+    "pdfplumber",
+    "pgvector",
+    "psycopg",
+    "pydantic",
+    "Tfidf",
+    "vectorizer",
     "vectorstore",
     "vectorstores"
   ]
