@@ -266,7 +266,7 @@ def answer(payload: SearchPayload):
     content = ''
     results = get_search_results(payload.query)
     for result in results:
-      content = content + ' ' + result
+      content = content + ' ' + result[0]
     answer = get_answer_from_llm(answer_prompt_template, content, payload.query)
     return answer
 
@@ -275,7 +275,7 @@ def llm(payload: LLMPayload):
     content = ''
     results = get_search_results(payload.query)
     for result in results:
-      content = content + ' ' + result
+      content = content + ' ' + result[0]
     answer = get_answer_from_llm(payload.template, content, payload.query)
     return answer
 
