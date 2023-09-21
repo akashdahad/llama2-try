@@ -6,44 +6,63 @@ from sentence_transformers import SentenceTransformer
 from langchain.llms import LlamaCpp
 from langchain.llms import CTransformers
 from langchain import PromptTemplate, LLMChain
+from typing import Union
+from fastapi import FastAPI
+from pydantic import BaseModel
+from nltk.tokenize import sent_tokenize
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from transformers import pipeline
 import torch
 import psycopg2
 import pdfplumber
 import io
-from typing import Union
-from fastapi import FastAPI
-from pydantic import BaseModel
+import requests
+import re
+import nltk
+import json
+import spacy
 
+
+#? To Start the server
+#? python3 -m uvicorn main:app --reload 
 
 app = FastAPI()
 
+# python3 -m spacy download en_core_web_sm To Download Model
+nlp = spacy.load("en_core_web_lg")
+nltk.download('punkt')
 
-# Database connection parameters
+
+#* Database connection parameters
 DBNAME = 'postgres'
 USER = 'devadmin'
 PASSWORD = 'KCE9MP2En93gLCz2'
 HOST = 'bhyve-india-dev-db.postgres.database.azure.com'
 PORT = '5432'
 
-# Connect to the database
+#* Connect to the database
 connection = psycopg2.connect(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
 conn = connection.cursor()
 
 model = SentenceTransformer('bert-base-nli-mean-tokens')
 
-
 # Extract Text
 def extract_data_from_file(url):
   text = ''
-  with pdfplumber.open(io.BytesIO(url.content)) as pdf:
+  contents = requests.get(url)
+  with pdfplumber.open(io.BytesIO(contents.content)) as pdf:
     for page in pdf.pages:
       data = page.extract_text(x_tolerance=3, y_tolerance=3)
-      text = text + '\n\n\n' + data
+      if(type(data) == str):
+        text = text + ' ' + data
   return { "content": text }
 
+# Extract Text in Array
 def extract_data_from_file_array(url):
   arr = []
-  with pdfplumber.open(io.BytesIO(url.content)) as pdf:
+  contents = requests.get(url)
+  with pdfplumber.open(io.BytesIO(contents.content)) as pdf:
     for page in pdf.pages:
       data = page.extract_text(x_tolerance=3, y_tolerance=3)
       arr.append(data)
@@ -57,35 +76,42 @@ def load_data():
   return documents
 
 # Split Data into Chunks
-def split_data(documents):
-  print("Splitting Data")
-  text_splitter = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=50)
-  all_splits = text_splitter.split_documents(documents)
-  return all_splits
+def split_data(text, max_chunk_size):
+    sentences = sent_tokenize(text)
+    chunks = []
+    current_chunk = []
+    current_chunk_size = 0
+    for sentence in sentences:
+        current_chunk_size += len(sentence)
+        if current_chunk_size < max_chunk_size:
+            current_chunk.append(sentence)
+        else:
+            chunks.append(' '.join(current_chunk))
+            current_chunk = [sentence]
+            current_chunk_size = len(sentence)
+    if current_chunk:
+        chunks.append(' '.join(current_chunk))      
+    return chunks
 
 # Create Embeddings
 def create_embeddings(sentences):
-  # model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
   print("Creating Embeddings")
   embeddings = model.encode(sentences)
   return embeddings
 
 # Store Embeddings
-def store_embeddings(docs, embeddings):
+def store_embeddings(content_id, docs, embeddings):
   print("Storing Embeddings")
   for doc, embedding in zip(docs, embeddings):
-    print(doc)
-    st = doc.page_content.replace("'", "") 
-    conn.execute(f"INSERT INTO pg_embed (content_id, content,  embedding) VALUES ('{doc.metadata['source']}', '{st}', '{embedding.tolist()}')")
+    st = doc.replace("'", "") 
+    conn.execute(f"INSERT INTO pg_embed (content_id, content,  embedding) VALUES ('{content_id}', '{st}', '{embedding.tolist()}')")
     connection.commit()
 
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query])[0]
-  conn.execute(f"SELECT content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 10")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 5")
   results = conn.fetchall()
-  # for result in results:
-  #   print(result)
   return results
 
 # Load LLM
@@ -106,6 +132,77 @@ def get_answer_from_llm(template, content, prompt):
   print(result)
   return result
 
+# Pre Process Text
+def pre_process(text):
+    doc = nlp(text)
+    tokens = [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
+    return ' '.join(tokens)
+
+# Tag Text with Relevant Skill Tags
+def tag_text(input_text, tags):
+    processed_text = pre_process(input_text)
+
+    # Using TF-IDF to vectorize the texts
+    vectorizer = TfidfVectorizer()
+    tfidf_matrix = vectorizer.fit_transform([processed_text] + tags)
+    
+    # Calculate cosine similarity
+    cosine_similarities = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix).flatten()
+    
+    # Threshold to consider a tag as relevant can be adjusted
+    threshold = 0.15
+    relevant_tags = [tags[i] for i, score in enumerate(cosine_similarities[1:]) if score > threshold]
+    print("Relevant Tags(0.15): ", relevant_tags)
+    return relevant_tags
+
+# Generate Synopsis
+def generate_synopsis(text, min, max):
+    print("Length:", len(text))
+    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    summary = summarizer(text, max_length=max, min_length=min, do_sample=False)
+    return summary[0]['summary_text']
+
+# Generate Synopsis Recursively for Large Text
+def synopsis_generator(text):
+  if(len(text) < 3000):
+    return generate_synopsis(text, 100, 300)
+  chunks = split_data(text, 3000)
+  synopsis = ''
+  for chunk in chunks:
+    synopsis = synopsis + " " + generate_synopsis(chunk, 30, 100)
+    print("Synopsis Length:", len(synopsis))
+  if len(synopsis) > 3000:
+    print("RE STARTING ---> ", len(synopsis))
+    synopsis = synopsis_generator(synopsis)
+  else:  
+    synopsis = generate_synopsis(synopsis, 100, 300)
+  print("FINAL LENGTH ---> ", len(synopsis))
+  return synopsis
+
+def summary_generator_per_page(texts):
+  summary = []
+  for text in texts:
+    summary_per_page = synopsis_generator(text)
+    summary.append(summary_per_page)
+    print(summary_per_page)
+    print('---------------------------------------')
+  return summary
+
+def get_relevant_skill_tags(url, tags):
+  content = extract_data_from_file(url)
+  return tag_text(content['content'], tags)
+
+def get_summary_per_page(url):
+  content = extract_data_from_file_array(url)
+  return summary_generator_per_page(content['content'])
+
+def get_summary(url):
+  content = extract_data_from_file(url)
+  return synopsis_generator(content['content'])
+
+def get_synopsis(url):
+  content = extract_data_from_file(url)
+  return generate_synopsis(content['content'])
 
 class SearchPayload(BaseModel):
     query: str
@@ -117,6 +214,10 @@ class LLMPayload(BaseModel):
 class FilePayload(BaseModel):
     file_url: str
 
+class SkillTagsPayload(BaseModel):
+    file_url: str
+    skill_tags: list
+
 @app.get("/")
 def Home():
     return {"Hello": "World"}
@@ -124,6 +225,26 @@ def Home():
 @app.post("/search")
 def search(payload: SearchPayload):
     results = get_search_results(payload.query)
+    return results
+
+@app.post("/skill-tags")
+def skill_tags(payload: FilePayload):
+    results = get_relevant_skill_tags(payload.file_url, payload.skill_tags)
+    return results
+
+@app.post("/summary-per-page")
+def summary_per_page(payload: FilePayload):
+    results = get_summary_per_page(payload.file_url)
+    return results
+
+@app.post("/summary")
+def summary(payload: FilePayload):
+    results = get_summary(payload.file_url)
+    return results
+
+@app.post("/synopsis")
+def synopsis(payload: FilePayload):
+    results = get_synopsis(payload.file_url)
     return results
 
 @app.post("/answer")
@@ -152,7 +273,9 @@ def fileContent(payload: FilePayload):
 
 @app.post("/file/content/storeEmbeddings")
 def storeFileEmbeddings(payload: FilePayload):
-    result = extract_data_from_file_array(payload.file_url)
-    embeddings = create_embeddings(result.content)
-    result_store = store_embeddings(result.content, embeddings)
+    result = extract_data_from_file(payload.file_url)
+    chunks = split_data(result['content'], 2000)
+    embeddings = create_embeddings(chunks)
+    #! Update this UUID Dynamically
+    result_store = store_embeddings('9fd801e1-aa4c-49dc-bd96-19ab7dbcc8bd', result['content'], embeddings)
     return result_store

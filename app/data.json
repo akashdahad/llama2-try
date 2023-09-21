@@ -1,0 +1,572 @@
+[
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/0462acb2-f51f-46d7-b2a2-309d0fa6c1f3-190fdb66-78b1-44f3-b1a8-038fb62fbce7.pdf",
+    "taggedSkills": ["03d8c60f-a1af-4439-bff5-38c3f127ee1e"],
+    "displayNames": ["AR Analysis & Follow Up"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/1595ddc2-b14a-4013-9042-3c1cb94d8173-78bdfe0e-eb8e-45f3-a506-0a2fd3797148.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "6adbdeee-8889-437d-a9c1-941b0a1ff17d"],
+    "displayNames": ["Claims Statusing", "Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/20fbd3b3-65e7-408b-9e7f-31a895252bf5-1c1aaf97-d506-4055-90f3-8471c57b7fd6.pdf",
+    "taggedSkills": ["6e5e8f61-a242-454b-a077-36e52add0002", "ee05cc22-3ae2-49e8-8f0f-d69a64c33603", "6491af3d-a3a5-48c1-adb0-2c2feabbd20f", "890e103f-d523-4622-b8a0-3d3c7ced82bc", "b1effc51-8ed2-4e2e-aad8-019587026d38"],
+    "displayNames": ["MS Excel Concept", "Excel Models", "MS Excel Reports Types", "Excel shortcuts", "Advanced Excel"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/22bb460e-7f47-4930-83dc-06139bb1d69a-b5caaa94-0304-4c92-b839-1de41a0fca01.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/25b85833-5d55-4eae-a66e-fa09b26be4b1-35ee3df0-4e79-4eb0-afa7-8550bc714eb5.pdf",
+    "taggedSkills": ["ef9a4be5-f0cc-4d0a-97e0-75ea470d07a3"],
+    "displayNames": ["medconnect"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/25b85833-5d55-4eae-a66e-fa09b26be4b1-5a5993b6-1b09-4669-b2d4-ebd6ae985b8f.pdf",
+    "taggedSkills": ["ef9a4be5-f0cc-4d0a-97e0-75ea470d07a3"],
+    "displayNames": ["medconnect"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/25b85833-5d55-4eae-a66e-fa09b26be4b1-dbca616e-8c85-4fdb-861a-c373bef1fb4a.0,.pdf",
+    "taggedSkills": ["ef9a4be5-f0cc-4d0a-97e0-75ea470d07a3"],
+    "displayNames": ["medconnect"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/25b85833-5d55-4eae-a66e-fa09b26be4b1-e67ebefb-1753-4c48-88a4-3c0ff275962c.pdf",
+    "taggedSkills": ["ef9a4be5-f0cc-4d0a-97e0-75ea470d07a3"],
+    "displayNames": ["medconnect"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/26e1401a-8053-412c-b5cc-91d9fb927048-fed4dcd8-5946-4f80-9d7a-8b6cafd2b5c1.pdf",
+    "taggedSkills": ["d64abc87-2c25-4bb8-8c64-0a896cdd9604"],
+    "displayNames": ["Service Operations"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/3261da81-8c9b-4f1e-80a1-b594fd56e5ce-81cc44a9-3728-4f4d-a405-ab28ad10b5c0.pdf",
+    "taggedSkills": ["7a7aa558-997a-4120-982f-052b6044f795"],
+    "displayNames": ["Medical Billing Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/332a6b0f-c23e-4e11-8be1-02a9371a5aa5-0ae6d81f-7efa-4a3a-ab78-58c972272143.pdf",
+    "taggedSkills": ["f6f4f570-17ec-4ac4-8011-449b2c4b233b", "03d8c60f-a1af-4439-bff5-38c3f127ee1e", "fec1c2e5-938a-46ee-a731-7320a1759dbc", "5b561ff9-afaa-4519-872e-1ba2a4812bae", "e3d795d2-1667-43f8-b0d1-004b06860b63", "c8d7b875-6b55-4503-a4ec-b82dd46eb764", "902f15cf-e231-453e-bb4c-5f53b2a78497"],
+    "displayNames": ["AR Analysis - Medical RCM", "Workflow Management - Medical RCM", "AR Analysis & Follow Up - Medical RCM", "Operations", "AR Analysis & Follow Up", "AR Analysis", "Automation."]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/3498b2d9-9ea1-4efc-a565-d4683159cca9-779da6f3-dcf6-4ec1-bbeb-8f801e14d76f.pdf",
+    "taggedSkills": ["0d03ee75-335f-497b-9c84-f102aaf10083", "03fea785-ddfe-4e77-be79-54de99887dd7"],
+    "displayNames": ["PMS Training", "Eligibility Verification Training"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/3498b2d9-9ea1-4efc-a565-d4683159cca9-805b79cb-07b3-48a3-a07d-3e21a12e9c6a.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "0d03ee75-335f-497b-9c84-f102aaf10083", "f9b769da-0159-45ab-af10-824df4efd26e", "0d03ee75-335f-497b-9c84-f102aaf10083"],
+    "displayNames": ["PMS Training", "Eligibility Verification", "PMS Training", "Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/378740ad-c1ce-47f5-bd6b-f2c4cfeba05f-3753403b-1f32-4c5e-a014-84911b446c97.pdf",
+    "taggedSkills": ["dc2aecd8-33e9-40a7-9794-b135032fb575"],
+    "displayNames": ["Ajudication - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/378740ad-c1ce-47f5-bd6b-f2c4cfeba05f-52dccab0-309c-4c58-ab4e-d0601725c08b.pdf",
+    "taggedSkills": ["2ddb57fa-0dde-4da7-9f30-ae45efc3c817"],
+    "displayNames": ["Diagnostic Radiology"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/378740ad-c1ce-47f5-bd6b-f2c4cfeba05f-6ecce4c8-ea5e-41a7-859c-515da7242abb.pdf",
+    "taggedSkills": ["dc2aecd8-33e9-40a7-9794-b135032fb575"],
+    "displayNames": ["Ajudication - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/37b7c556-81cd-4b5c-9b6c-a43fe086b4a5-4f9fce78-a96a-44a6-b2ea-42561c57a69b.pdf",
+    "taggedSkills": ["589793b2-5c90-4a1f-a80c-b0adccf6af68"],
+    "displayNames": ["Python"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/3cfc49f5-694e-4fff-b85d-4072fce19571-cc8894c1-b6ad-4f6c-b9de-55593b482230.pdf",
+    "taggedSkills": ["bb601c0d-0d79-46b9-87e7-fc0ecd493dde", "c2ab5016-0c49-495e-9a28-bbb96017c776", "bb601c0d-0d79-46b9-87e7-fc0ecd493dde", "c2ab5016-0c49-495e-9a28-bbb96017c776", "c23edce9-852b-463e-b388-98851c6eff26", "24842ba6-e816-4284-a39e-ed9f7a763d76", "9f172fbd-0901-49fc-ad22-0d2b24d7c5d8"],
+    "displayNames": ["Interventional Vascular Radiology", "Interventional Vascular Radiology", "Medical coding", "Pre-Auth - Medical RCM", "Pre-Auth", "Surgery - Cardio Vascular", "Medical coding"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/43ab55e1-6215-4c63-ac7e-5bfba8aa33e7-6c8bba70-26f1-4085-9410-a00ea831967b.pdf",
+    "taggedSkills": ["dc2aecd8-33e9-40a7-9794-b135032fb575", "fec1c2e5-938a-46ee-a731-7320a1759dbc", "4b9795e2-236c-4999-960f-99422b805b79"],
+    "displayNames": ["AR Analysis", "Denial Actions - Medical RCM", "Ajudication - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/43ab55e1-6215-4c63-ac7e-5bfba8aa33e7-7417a9bf-6c54-450d-88e5-5b15198b87a5.pdf",
+    "taggedSkills": ["e3d795d2-1667-43f8-b0d1-004b06860b63", "dc2aecd8-33e9-40a7-9794-b135032fb575"],
+    "displayNames": ["Ajudication - Medical RCM", "AR Analysis - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/475809a2-c545-4a41-9a21-7bbaab532092-0d1124a4-9f2d-410c-80f0-4ba69bd32b46.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "03fea785-ddfe-4e77-be79-54de99887dd7"],
+    "displayNames": ["Eligibility Verification Training", "Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/475809a2-c545-4a41-9a21-7bbaab532092-a9e5435a-b9a0-4506-9359-98c304d793e5.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/475809a2-c545-4a41-9a21-7bbaab532092-d1dc8039-f00d-4257-9304-097fd7adbe6e.pdf",
+    "taggedSkills": ["c974ae44-57b7-4b3a-893d-342775ec20cb"],
+    "displayNames": ["Eligibility Verification Epic"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/475809a2-c545-4a41-9a21-7bbaab532092-e01a0fe0-0214-4981-a4de-40d9e798e71a.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "03fea785-ddfe-4e77-be79-54de99887dd7"],
+    "displayNames": ["Eligibility Verification Training", "Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/475809a2-c545-4a41-9a21-7bbaab532092-f58996d2-7351-4797-a492-02e372c34a4a.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "03fea785-ddfe-4e77-be79-54de99887dd7"],
+    "displayNames": ["Eligibility Verification Training", "Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/4b1d4cc8-a88a-4d39-9345-85a705627546-3aad216d-b8e9-48b0-9533-402c94d48f02.pdf",
+    "taggedSkills": ["446ee065-8cf5-40f0-8897-cb76994ef24c", "5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies", "Deltas"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/50f10c43-6c6c-46fb-a362-58a6b09526b1-ba944156-0380-4f67-9f00-b3c036963290.pdf",
+    "taggedSkills": ["9c1dec9b-169e-4ad4-b1f3-7c4c2e79f2fa", "cf018465-c659-4b41-98a0-de93c89e220e", "cba4d59d-5ed1-4145-b469-1654b158cbaf", "6cf158e8-5f49-4160-bb49-178dc09e572d"],
+    "displayNames": ["Claims Auditing", "Claims Statusing - Medical RCM", "Claims Investigations", "claims followup"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/50f10c43-6c6c-46fb-a362-58a6b09526b1-f288b3d0-2aa3-43ff-8090-1d1a53f705f9.pdf",
+    "taggedSkills": ["e55798a5-c31b-4add-aca0-f5b33a1292c7", "cba4d59d-5ed1-4145-b469-1654b158cbaf", "9c1dec9b-169e-4ad4-b1f3-7c4c2e79f2fa", "fe4042a5-df6d-47ac-a755-f9664fbadc0e"],
+    "displayNames": ["claims followup", "Claims Statusing - Medical RCM", "Claims Resolution", "Claims Handling"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/58c3efef-a240-4a67-b831-5329f19488d6-f16b2ca7-fa6e-4042-9daf-c80121024b27.pdf",
+    "taggedSkills": ["5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/59c713ba-d78b-48dc-8e08-7b0151314bb7-87af176f-c39c-4af5-a3e5-10a47ff21c80.pdf",
+    "taggedSkills": ["4fa7f833-d463-49ac-a12d-90ea3e3b463e", "f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Curve Hero", "Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5c8a5fec-6009-4775-b6c0-06b7e4f0531e-ab4e3ab8-f0a8-4782-87b2-7b326a150882.pdf",
+    "taggedSkills": ["d64abc87-2c25-4bb8-8c64-0a896cdd9604"],
+    "displayNames": ["Service Operations"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f5f344d-bb05-4a6c-8c30-9b3f1a0866b9-5fd1d716-c41f-4c09-9236-a06d5b0fa443.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "c12c1d3f-6f8a-4e71-a108-5a1a5c6cd266"],
+    "displayNames": ["Eligibility Verification", "Client Service Delivery Management"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f5f344d-bb05-4a6c-8c30-9b3f1a0866b9-cfd7347e-79af-4e68-a636-c4e99a1f794f.pdf",
+    "taggedSkills": ["03fea785-ddfe-4e77-be79-54de99887dd7"],
+    "displayNames": ["Eligibility Verification Training"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f6fdade-ecad-4e09-9f94-96089a191d4e-26a9c58e-87cd-470c-abf8-a0ab02262efe.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f6fdade-ecad-4e09-9f94-96089a191d4e-31b07e87-56a0-4e2f-be58-88f0b834d8f2.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f6fdade-ecad-4e09-9f94-96089a191d4e-717be25c-304a-4946-ad51-0bf9ec49a473.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f6fdade-ecad-4e09-9f94-96089a191d4e-9f9eb805-2994-4d27-951d-9c3ae3e6339a.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f6fdade-ecad-4e09-9f94-96089a191d4e-e52ec220-6b2b-4f6a-a3dc-c4f3a16d9f8a.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/5f8af6de-74f3-49cd-89f9-c43fc3a13ad1-6469f305-127b-4b88-b4ba-d7bf7e2d94ec.pdf",
+    "taggedSkills": ["e8a8dacf-5661-4e74-97b7-cb9783e66b01"],
+    "displayNames": ["Training & Development"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/6012582d-d618-4ef8-881f-ea0ce28a2364-ef5862a8-fa82-452e-b7b5-d76c3b0dad49.pdf",
+    "taggedSkills": ["ccd93b47-f1df-48c6-971a-7b645e0513ce", "546fb90f-763a-447a-8b4f-9dc5f7ad7951"],
+    "displayNames": ["Insurance Adjusting", "Documentation"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/6cbf8659-de1a-488c-b7e5-1bbe2330bf56-1dacfdac-6be1-4520-9aa7-3f54f85e0532.pdf",
+    "taggedSkills": ["c12c1d3f-6f8a-4e71-a108-5a1a5c6cd266"],
+    "displayNames": ["Client Service Delivery Management"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/6cbf8659-de1a-488c-b7e5-1bbe2330bf56-88b43020-42a1-4d1f-8510-4f71ac307142.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/74b48abe-0afa-48a8-82fc-d09cffc1c8df-3ad93cbb-b49d-4c32-a8ff-78bd0dc64216.pdf",
+    "taggedSkills": ["8536093c-bd54-45c4-9b66-3336f032ab9a", "28484502-add4-4022-a190-1a330021c818", "2fd1763f-2e44-4b71-91ab-99e73a31de12", "db5e349f-cdfd-4147-92fe-0eccfa4cdd05", "efaabefb-8efa-4b74-8314-1e2a61ec607b", "3999885f-e1e5-4bc5-9bec-8914a82da244", "9d94b678-1d05-48f7-b9a8-913d9dc7e7a1", "88a52387-0104-4dec-bfa5-dd2eaf81288f"],
+    "displayNames": ["Deep Learning", "Elearning Development", "Machine Learning", "Quick Learning", "UCCI", "Learning Mindset", "Learning Theory", "Active Learning"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/74b48abe-0afa-48a8-82fc-d09cffc1c8df-3e193a8a-004d-4f3d-978f-08aab7884f3b.pdf",
+    "taggedSkills": ["2fd1763f-2e44-4b71-91ab-99e73a31de12", "1692a5cb-8e16-4d0f-a25a-af25cc059ed5", "3999885f-e1e5-4bc5-9bec-8914a82da244", "28484502-add4-4022-a190-1a330021c818", "db5e349f-cdfd-4147-92fe-0eccfa4cdd05", "88a52387-0104-4dec-bfa5-dd2eaf81288f", "a39bee9f-91ae-4f0d-91c7-4b213a87b034", "4e61c116-6ae6-45a0-a725-e34b13006db2", "759b3537-f979-430b-b8ae-425cb83bd787", "cbcc3d97-64d3-443f-9c5d-1fb2bcc0ed4e", "7db428db-09a2-48fe-a128-abd2e4a0e6fd", "f21d6ccf-a7ce-4adf-8113-75a97648c29f", "67c548b3-c527-4e4b-8ba9-6d8c060145c7", "efaabefb-8efa-4b74-8314-1e2a61ec607b", "0a247450-0c6b-4012-8aba-d89df54345e2"],
+    "displayNames": ["Learning Theory", "Active Learning", "Quick Learning", "Team Building", "Organizational Learning", "Active Listening", "Team Orientated", "Active Reports", "Teamwork", "Elearning Development", "Deep Learning", "Team-Building", "Learning Mindset", "Database Management", "Active Team Player"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/74b48abe-0afa-48a8-82fc-d09cffc1c8df-5ff47fae-bfe6-4d58-a719-009dfb339ef1.pdf",
+    "taggedSkills": ["db5e349f-cdfd-4147-92fe-0eccfa4cdd05", "7756637d-c592-4377-bd22-ec5bbaa389c2", "5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f", "28484502-add4-4022-a190-1a330021c818", "2fd1763f-2e44-4b71-91ab-99e73a31de12", "efaabefb-8efa-4b74-8314-1e2a61ec607b", "88a52387-0104-4dec-bfa5-dd2eaf81288f", "a39bee9f-91ae-4f0d-91c7-4b213a87b034", "ce870859-2c47-4e24-ba6f-1d9816f7f59e", "3999885f-e1e5-4bc5-9bec-8914a82da244", "9d94b678-1d05-48f7-b9a8-913d9dc7e7a1"],
+    "displayNames": ["Elearning Development", "Machine Learning", "Process Management", "Organizational Learning", "Quick Learning", "Deep Learning", "Learning Theory", "Learning Mindset", "Dental Terminologies", "Dental Benefits Classifictaion", "Active Learning"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/74b48abe-0afa-48a8-82fc-d09cffc1c8df-72be5903-0a27-4a8e-a372-375116a20006.pdf",
+    "taggedSkills": ["f7cb98e7-e944-4230-acce-766a6f267dc9", "db5e349f-cdfd-4147-92fe-0eccfa4cdd05", "4e61c116-6ae6-45a0-a725-e34b13006db2", "e8a8dacf-5661-4e74-97b7-cb9783e66b01", "f761f976-7161-473e-9b23-3e756d4eda61"],
+    "displayNames": ["Training & Development", "Lean Methodology", "Active Learning", "Lean Six Sigma", "Active Reports"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/74b48abe-0afa-48a8-82fc-d09cffc1c8df-762447cf-1ceb-41fd-8547-5b8fe32cae70.pdf",
+    "taggedSkills": ["2fd1763f-2e44-4b71-91ab-99e73a31de12", "9d94b678-1d05-48f7-b9a8-913d9dc7e7a1", "3999885f-e1e5-4bc5-9bec-8914a82da244", "28484502-add4-4022-a190-1a330021c818", "db5e349f-cdfd-4147-92fe-0eccfa4cdd05", "88a52387-0104-4dec-bfa5-dd2eaf81288f", "a39bee9f-91ae-4f0d-91c7-4b213a87b034", "efaabefb-8efa-4b74-8314-1e2a61ec607b", "8536093c-bd54-45c4-9b66-3336f032ab9a", "ec1ec35b-1113-40f6-8036-cfbae9600e89"],
+    "displayNames": ["Elearning Development", "Learning Mindset", "Deep Learning", "UCCI", "Organizational Learning", "Quick Learning", "Active Learning", "Learning Theory", "Machine Learning", "Insurance"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/75460e2c-41f3-433c-b14f-91764e2a56e9-378b694d-d964-4bdc-8687-ba0babe5d586.pdf",
+    "taggedSkills": ["c20c3253-9725-4d08-a5b0-1c49d59c55ce"],
+    "displayNames": ["UpdateDental"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/75460e2c-41f3-433c-b14f-91764e2a56e9-74846b48-0695-493d-a3fd-1922a05f0e57.pdf",
+    "taggedSkills": ["c74d6a18-0326-48ae-93bd-e4d8a6d8be5b"],
+    "displayNames": ["denial code"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/8d773a33-dc11-42af-a83d-691a9c1ed63d-1460f41e-a34b-4402-ab4d-cfb991c80b38.pdf",
+    "taggedSkills": ["02089a35-aa39-4e4f-9c52-8be0c03efd04"],
+    "displayNames": ["Ophthalmology"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/94ec07c3-7d09-4df9-b23d-733e9370e4d4-73a56052-00b2-4588-b7d2-91434dbc8aff.pdf",
+    "taggedSkills": ["e3d795d2-1667-43f8-b0d1-004b06860b63"],
+    "displayNames": ["AR Analysis - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/9c8d5a3b-2f2f-4dbf-8b5f-3d650cc46ebf-9b96e9a5-d0cb-4f2b-bab7-bb8fc4100813.pdf",
+    "taggedSkills": ["79806c07-27a6-48d3-869c-8c4169121b0a"],
+    "displayNames": ["PO and NII"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/aaf1447e-95e9-4698-b33c-cd34cc40aeeb-5be86109-cb48-4f04-813a-4296c76aede7.pdf",
+    "taggedSkills": ["6be5f8de-1321-4aa9-884c-c86bee76a73e"],
+    "displayNames": ["Java"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/aaf92f37-d74e-43a3-8328-d63ac9fd956c-1813859c-57d4-4b25-859a-b83eb5342279.pdf",
+    "taggedSkills": ["ae060f19-0026-4cc7-8bbd-c0ff0f3c1048", "11b85503-e862-404c-8370-f5b65bfbca4d", "87da79bf-8b21-4ab2-9dbc-60841de141bb"],
+    "displayNames": ["Product Descriptions", "Attribution", "Product Evaluation"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/aaf92f37-d74e-43a3-8328-d63ac9fd956c-6f394710-8dca-4807-89a0-2e500310bef5.pdf",
+    "taggedSkills": ["7e8ee11d-49e2-4e0b-bea9-7701d75d94d9", "ae060f19-0026-4cc7-8bbd-c0ff0f3c1048", "11b85503-e862-404c-8370-f5b65bfbca4d"],
+    "displayNames": ["HCPCS Coding", "Product Evaluation", "Product Descriptions"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/bd215577-009c-4377-a644-35b4441d384c-52f32830-5e25-400d-8f85-9e9be0d3ee27.pdf",
+    "taggedSkills": ["5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/be5805bc-8075-4b35-b02a-ae7fc3090033-d610bdd6-ec99-4113-8699-de2afca489ae.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e", "c12c1d3f-6f8a-4e71-a108-5a1a5c6cd266", "6adbdeee-8889-437d-a9c1-941b0a1ff17d", "9c1dec9b-169e-4ad4-b1f3-7c4c2e79f2fa"],
+    "displayNames": ["Claims Statusing", "Eligibility Verification", "Client Service Delivery Management", "claims followup"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/c0d74816-ba83-438e-9682-d48c30447224-0e2afede-37d8-4704-9cf2-90a1956d1967.pdf",
+    "taggedSkills": ["43dc9ed3-e8ad-49a8-96ad-b5473d2b995b"],
+    "displayNames": ["Pathology"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/c1e25e3e-bcd4-45da-9ff3-1c035a09801c-7519a3aa-59bc-4143-be0c-45b61bc9f80b.pdf",
+    "taggedSkills": ["c8d7b875-6b55-4503-a4ec-b82dd46eb764"],
+    "displayNames": ["AR Analysis & Follow Up - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/c97dc75b-bbdb-4f42-a122-264861f67001-85443d63-2861-4f28-afa7-50892750e444.pdf",
+    "taggedSkills": ["51d4a812-f15c-42ea-a64d-20bf6c6672ac", "f55ef83c-f804-445d-b2fe-ed1e7c4de8eb", "51d4a812-f15c-42ea-a64d-20bf6c6672ac", "f55ef83c-f804-445d-b2fe-ed1e7c4de8eb"],
+    "displayNames": ["healthcare", "UNSPSC Coding", "UNSPSC Coding", "healthcare"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/cef571f8-4a9b-45a0-b729-59086c6a4bb5-b602139a-9285-4511-8053-a1327f02ff66.pdf",
+    "taggedSkills": ["c12c1d3f-6f8a-4e71-a108-5a1a5c6cd266"],
+    "displayNames": ["Client Service Delivery Management"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/cef571f8-4a9b-45a0-b729-59086c6a4bb5-ebc2bdb6-d9ea-4885-9145-818744f8ae83.pdf",
+    "taggedSkills": ["c12c1d3f-6f8a-4e71-a108-5a1a5c6cd266"],
+    "displayNames": ["Client Service Delivery Management"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/d8908f74-e5df-4d4a-9c02-d82000978e75-76a275b8-a8a1-4403-aa16-e78f914c8bbd.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/d8908f74-e5df-4d4a-9c02-d82000978e75-db595b80-0469-4e6c-a5dc-7b295df251af.pdf",
+    "taggedSkills": ["c974ae44-57b7-4b3a-893d-342775ec20cb"],
+    "displayNames": ["Eligibility Verification Epic"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/d8908f74-e5df-4d4a-9c02-d82000978e75-e592e900-6429-4462-92ce-5c01e694b12a.pdf",
+    "taggedSkills": ["c974ae44-57b7-4b3a-893d-342775ec20cb"],
+    "displayNames": ["Eligibility Verification Epic"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dbff5d90-a81e-43f2-90f6-c683dc447e6c-1bf852e7-efd8-4858-83fd-6411c2ef8e40.pdf",
+    "taggedSkills": ["3839070b-f3ac-4405-bc28-e08f9582e305", "3b765dd2-b07a-4f13-b817-0d4c7e3fcafd", "24842ba6-e816-4284-a39e-ed9f7a763d76", "c23edce9-852b-463e-b388-98851c6eff26"],
+    "displayNames": ["Pre-Auth", "EV & Authorization Request", "Authorization Verification", "Pre-Auth - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dbff5d90-a81e-43f2-90f6-c683dc447e6c-99e51caa-54ea-4795-b5af-479f0b44c681.pdf",
+    "taggedSkills": ["3b765dd2-b07a-4f13-b817-0d4c7e3fcafd", "b7191b4c-b2b1-4dc2-8a56-772b315f1753", "24842ba6-e816-4284-a39e-ed9f7a763d76", "c23edce9-852b-463e-b388-98851c6eff26"],
+    "displayNames": ["Authorization Verification", "Pre-Auth", "Pre-Auth - Medical RCM", "Authorization Verification - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dc464517-62b8-44cb-8875-77fb22ce9a86-16a57a89-d363-45e6-9fa7-d4019fcdae29.pdf",
+    "taggedSkills": ["f55ef83c-f804-445d-b2fe-ed1e7c4de8eb"],
+    "displayNames": ["UNSPSC Coding"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dd8b1d4e-e865-41f7-9429-e0c0d4182e43-03cb3976-8c02-4de3-8346-e271c18a14da.pdf",
+    "taggedSkills": ["fec1c2e5-938a-46ee-a731-7320a1759dbc", "c8d7b875-6b55-4503-a4ec-b82dd46eb764", "5e63431a-09b6-4abe-902b-0f97b72a47c8"],
+    "displayNames": ["AR Analysis", "AR Analysis & Follow Up - Medical RCM", "Medicare Part B"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dd8b1d4e-e865-41f7-9429-e0c0d4182e43-519862ea-547a-402a-aec5-f31e17fcd6d8.pdf",
+    "taggedSkills": ["c8d7b875-6b55-4503-a4ec-b82dd46eb764", "fec1c2e5-938a-46ee-a731-7320a1759dbc", "03d8c60f-a1af-4439-bff5-38c3f127ee1e", "e3d795d2-1667-43f8-b0d1-004b06860b63", "03d8c60f-a1af-4439-bff5-38c3f127ee1e", "fec1c2e5-938a-46ee-a731-7320a1759dbc", "c8d7b875-6b55-4503-a4ec-b82dd46eb764", "fec1c2e5-938a-46ee-a731-7320a1759dbc", "e3d795d2-1667-43f8-b0d1-004b06860b63", "03d8c60f-a1af-4439-bff5-38c3f127ee1e"],
+    "displayNames": ["AR Analysis - Medical RCM", "AR Analysis & Follow Up - Medical RCM", "AR Analysis", "AR Analysis & Follow Up", "AR Analysis - Medical RCM", "AR Analysis & Follow Up", "AR Analysis", "AR Analysis & Follow Up - Medical RCM", "AR Analysis", "AR Analysis & Follow Up"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dd8b1d4e-e865-41f7-9429-e0c0d4182e43-56a46ac6-f00a-42f6-aad5-cfaaab74cc90.pdf",
+    "taggedSkills": ["cba4d59d-5ed1-4145-b469-1654b158cbaf", "03d8c60f-a1af-4439-bff5-38c3f127ee1e", "c8d7b875-6b55-4503-a4ec-b82dd46eb764", "fec1c2e5-938a-46ee-a731-7320a1759dbc", "e3d795d2-1667-43f8-b0d1-004b06860b63"],
+    "displayNames": ["AR Analysis & Follow Up", "AR Analysis - Medical RCM", "AR Analysis", "Claims Statusing - Medical RCM", "AR Analysis & Follow Up - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dec381ff-81ff-47d2-b943-32153a389c01-24f0794b-858f-4e34-83e8-c6ef85661c29.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dec381ff-81ff-47d2-b943-32153a389c01-740ee71c-7a49-4edc-8670-84a986fafeaa.pdf",
+    "taggedSkills": ["e8c3c7b2-36a0-45bb-89c6-9e5c975672b8"],
+    "displayNames": ["Plan Creation"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/dec381ff-81ff-47d2-b943-32153a389c01-a2ff73d1-b5fc-40e1-8e5f-547a361558bb.pdf",
+    "taggedSkills": ["e8c3c7b2-36a0-45bb-89c6-9e5c975672b8"],
+    "displayNames": ["Plan Creation"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/e9d592f5-48ec-488e-a881-c3494673038c-403eba51-03c4-4417-a19e-366ffc12c53c.pdf",
+    "taggedSkills": ["7756637d-c592-4377-bd22-ec5bbaa389c2"],
+    "displayNames": ["Dental Benefits Classifictaion"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/e9d592f5-48ec-488e-a881-c3494673038c-4834442d-6e82-4079-8a61-e0ddff53cb29.pdf",
+    "taggedSkills": ["5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/e9d592f5-48ec-488e-a881-c3494673038c-b1b72987-d1c6-4d51-8d49-602e4b750c66.pdf",
+    "taggedSkills": ["7756637d-c592-4377-bd22-ec5bbaa389c2", "1d1cec32-fd61-4786-ad30-be4e7c86f6b3"],
+    "displayNames": ["DENTAL EV", "Dental Benefits Classifictaion"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/e9d592f5-48ec-488e-a881-c3494673038c-eb9069a2-4f8d-4c49-82a8-6496fb94ecd6.pdf",
+    "taggedSkills": ["5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/e9d592f5-48ec-488e-a881-c3494673038c-fc2f1332-5b34-43ad-bf8d-95149f063101.pdf",
+    "taggedSkills": ["5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fa5630e4-4dc9-42ec-8bd0-ef5748263e15-bdec2dd1-deea-4f89-8875-ec633afef1b3.pdf",
+    "taggedSkills": ["79806c07-27a6-48d3-869c-8c4169121b0a", "992581bf-5b84-4a44-8aab-1119ff5c5322"],
+    "displayNames": ["PO and NII", "UNSPSC Coding - Premier"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-08d8661d-2e0f-4099-bae7-17ffb84dcc3f.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-0e8a1c6f-ab57-477d-ac18-eb928ebd34ad.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-13e4536e-0253-418f-a5c3-4ba989a698f5.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-1407d856-2971-46cb-aaf4-c27c9d6f7b11.pdf",
+    "taggedSkills": ["1edff043-1373-4d9a-b305-e97d057a3a95"],
+    "displayNames": ["Fee Schedule - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-14848d92-23c9-4b8e-96e2-79c5dcb8de67.pdf",
+    "taggedSkills": ["7ef1e592-945e-43dc-9e16-35e0aef4e85e"],
+    "displayNames": ["State Abbreviation"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-174d6a79-2a10-4bdf-9dd2-4cab85e3a062.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-1b087af0-df7d-45dd-9081-e88b1395d595.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-1bce8aea-ec78-4b21-8149-9d3a25d8bd06.pdf",
+    "taggedSkills": ["7a7aa558-997a-4120-982f-052b6044f795"],
+    "displayNames": ["Medical Billing Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-2ddc7178-04e7-4047-883e-33325085949b.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-37aee3b8-1866-466c-9652-3d175a3fc971.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-52ec51e0-ad8f-4222-9ef2-1fb3d9d6aa37.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-55d87756-830a-4865-8187-79885ac3b814.pdf",
+    "taggedSkills": ["5b7d645b-5d2b-4b95-ad5f-17b3ba41d47f"],
+    "displayNames": ["Dental Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-568f9348-6d2e-48d4-834a-debbdfcc3153.pdf",
+    "taggedSkills": ["7a7aa558-997a-4120-982f-052b6044f795"],
+    "displayNames": ["Medical Billing Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-646859d0-6d86-412f-afb6-244c0498076d.pdf",
+    "taggedSkills": ["5e63431a-09b6-4abe-902b-0f97b72a47c8"],
+    "displayNames": ["Medicare Part B"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-6b024e83-13c6-4343-9441-95e45c2fc604.pdf",
+    "taggedSkills": ["5e63431a-09b6-4abe-902b-0f97b72a47c8"],
+    "displayNames": ["Medicare Part B"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-8201ab8f-de43-4531-b5ef-197ed7006b3c.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-820e778e-8621-4e63-adbb-55ad74e29b03.pdf",
+    "taggedSkills": ["7a7aa558-997a-4120-982f-052b6044f795"],
+    "displayNames": ["Medical Billing Terminologies"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-90c6e368-25a4-4385-9d83-2f398d41cb7d.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-97cad66a-b0d9-4680-847e-62f3906261fd.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-9e41e829-604d-4bed-8deb-97d55aa9d1d7.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-a4e83edc-fd82-4f5f-a721-bb2c79cfbe5b.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-b06cecce-0654-4557-b4ae-20551268059b.pdf",
+    "taggedSkills": ["8ff3ecf4-b1e4-46e2-a303-99ebdd8d4617"],
+    "displayNames": ["Medical Document Prepping and Sorting"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-b255e6ad-212c-4d4a-bd91-a10cf125f7e2.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-c1c39892-8335-435a-bc8d-3d49c64ab4a3.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-ca926aed-2ac3-4c42-9923-1d6f04f07a5f.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-cf3a7569-af39-4ba2-9f3b-2aef068c628f.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-d6a0d789-f9f6-4f01-ae2e-96e4d5f4b5f8.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-e1cb10cf-e39e-4d8c-9b84-9ab052808cc8.pdf",
+    "taggedSkills": ["cbe41722-b180-456a-8596-bc84067da8e6"],
+    "displayNames": ["Insurance Concepts"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fcd20d1f-568b-40ee-8386-18ac6e537ab6-e9e2cfe2-5798-43e8-960b-0d1cbd5ed597.pdf",
+    "taggedSkills": ["cac6532d-404f-42f0-bf04-bb78ef3d1de6", "575223df-396a-4296-9a40-a0fb5409868f", "c8d7b875-6b55-4503-a4ec-b82dd46eb764"],
+    "displayNames": ["contact no ", "BCBS", "AR Analysis & Follow Up - Medical RCM"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fec1deb8-a5b5-4f83-88c2-5ecf88842ca2-48ee30fe-f08b-40f9-b0a7-21b387cafbe6.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fec1deb8-a5b5-4f83-88c2-5ecf88842ca2-c09e39e4-913c-48f8-8af9-fa36eea65783.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fec1deb8-a5b5-4f83-88c2-5ecf88842ca2-d0f2fac7-c0dd-43d5-bafd-3bf90dd0d467.pdf",
+    "taggedSkills": ["bb487e18-1b56-4dde-b0dc-4050feac7af8"],
+    "displayNames": ["Work Order"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fec1deb8-a5b5-4f83-88c2-5ecf88842ca2-d0fe9c87-f6d9-4470-adcc-632c5314b65f.pdf",
+    "taggedSkills": ["bb487e18-1b56-4dde-b0dc-4050feac7af8"],
+    "displayNames": ["Work Order"]
+  },
+  {
+    "uploadedFileUrl": "https://bhyve-medusind-content.s3.ap-south-1.amazonaws.com/a02a0d43-eade-45d0-9fa9-e2331f7a0153/files/fec1deb8-a5b5-4f83-88c2-5ecf88842ca2-dda1ae6d-4c15-4a30-97e0-a57071fafe4d.pdf",
+    "taggedSkills": ["f9b769da-0159-45ab-af10-824df4efd26e"],
+    "displayNames": ["Eligibility Verification"]
+  }
+]
