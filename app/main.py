@@ -124,11 +124,12 @@ def load_llm():
     verbose=True)
     return llm
 
+llm = load_llm()
+
 # Get Answer From LLM
-def get_answer_from_llm(template, content, prompt):
-  llm = load_llm()
-  template = PromptTemplate(template=template, input_variables=["context", "question"])
-  llm_chain = LLMChain(prompt=prompt, llm=llm)
+def get_answer_from_llm(template_param, content, prompt):
+  template = PromptTemplate(template=template_param, input_variables=["context", "question"])
+  llm_chain = LLMChain(prompt=template, llm=llm)
   result = llm_chain.run(context = content, question = prompt)
   print(result)
   return result
