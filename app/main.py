@@ -117,7 +117,8 @@ def get_search_results(query):
 # Load LLM
 def load_llm():
     llm = LlamaCpp(
-    model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin",
+    model_path="./models/llama-2-7b-32k-instruct.ggmlv3.q8_0.bin",
+    # model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin",
     n_gpu_layers=32,
     n_batch=512,
     verbose=True)
@@ -200,6 +201,13 @@ def get_summary(url):
   content = extract_data_from_file(url)
   return synopsis_generator(content['content'])
 
+def get_summary_in_points(url):
+  content = extract_data_from_file(url)
+  content = content['content'][:80000]
+  summary_template = """ You are very intelligent person. Understand the context provided. And Summarize the Context in bullet points. But dont go out of the context. Context : {context}. Summary:  . Return a string which is answer"""
+  summary = get_answer_from_llm(answer_prompt_template, content, payload.query)
+  return summary
+
 def get_synopsis(url):
   content = extract_data_from_file(url)
   return generate_synopsis(content['content'])
@@ -241,6 +249,11 @@ def summary_per_page(payload: FilePayload):
 def summary(payload: FilePayload):
     results = get_summary(payload.file_url)
     return results
+
+@app.post("/summary-in-points")
+def summary_in_points(payload: FilePayload):
+  result = get_summary_in_points(payload.file_url)
+  return result
 
 @app.post("/synopsis")
 def synopsis(payload: FilePayload):
