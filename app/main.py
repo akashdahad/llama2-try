@@ -29,7 +29,7 @@ import spacy
 
 app = FastAPI()
 
-# python3 -m spacy download en_core_web_sm To Download Model
+# python3 -m spacy download en_core_web_lg To Download Model
 nlp = spacy.load("en_core_web_lg")
 nltk.download('punkt')
 
@@ -205,7 +205,7 @@ def get_summary_in_points(url):
   content = extract_data_from_file(url)
   content = content['content'][:80000]
   summary_template = """ You are very intelligent person. Understand the context provided. And Summarize the Context in bullet points. But dont go out of the context. Context : {context}. Summary:  . Return a string which is answer"""
-  summary = get_answer_from_llm(answer_prompt_template, content, payload.query)
+  summary = get_answer_from_llm(summary_template, content, payload.query)
   return summary
 
 def get_synopsis(url):
