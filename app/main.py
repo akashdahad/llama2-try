@@ -114,19 +114,20 @@ def store_embeddings(content_id, docs, embeddings):
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 4")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 3")
   results = conn.fetchall()
   return results
 
 # Load LLM
 def load_llm():
-  llm = LlamaCpp(model_path="./models/llama-2-13b-chat.Q8_0.gguf", n_ctx=3000, n_gpu_layers=32, n_batch=512, verbose=True)
+  llm = LlamaCpp(model_path="./models/llama-2-13b.Q6_K.gguf", n_ctx=3000, n_gpu_layers=32, n_batch=512, verbose=True)
   return llm
 
 llm = load_llm()
 
 # Get Answer From LLM
 def get_answer_from_llm(content, question):
+  print("CONTENT:", len(content))
   answer_prompt_template = """ 
   You are very intelligent person. Understand the context provided. 
   And answer the following question. But dont go out of the context. 
