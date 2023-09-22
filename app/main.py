@@ -136,6 +136,7 @@ def get_answer_from_llm(content, question):
   Read the context carefully and completely and provide the answer.
   Give Answers as you are explaining the given content. 
   Your answer should be in complete sentences, detailed and explain the question correctly. 
+  Give Answer in around 200 words. Also Answer should form a paragraph.
 
   Context : """ + content[:6000]  +  """ 
 
@@ -160,7 +161,7 @@ def get_summary_from_llm(content):
    Make sure your summaries includes all points and details. 
    Context : """ + content  + """ 
    Summary :  . 
-   Return a string which is answer
+   Return a string which is answer.
    
    """
   print("TEMPLATE:", summary_prompt_template)
