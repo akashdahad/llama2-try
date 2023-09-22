@@ -153,11 +153,11 @@ def get_answer_from_llm(content, question):
 # Get Answer From LLM
 def get_summary_from_llm(content):
   summary_prompt_template = """ 
-   You are very intelligent person. 
+   You are very intelligent and intellectual person. 
    Understand the context provided.
    And Summarize it in bullet points.
-   Give Answers as you are explaining the given content. 
-   But dont go out of the context. 
+   Make sure you include all the important points.
+   Make sure your summaries includes all points and details. 
    Context : """ + content  + """ 
    Summary :  . 
    Return a string which is answer
