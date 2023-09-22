@@ -6,6 +6,9 @@ from sentence_transformers import SentenceTransformer
 from langchain.llms import LlamaCpp
 from langchain.llms import CTransformers
 from langchain import PromptTemplate, LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.callbacks.manager import CallbackManager
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -116,31 +119,32 @@ def get_search_results(query):
 
 # Load LLM
 def load_llm():
-    llm = LlamaCpp(
-    model_path="./models/llama-2-7b-32k-instruct.ggmlv3.q8_0.bin",
-    n_gpu_layers=32,
-    n_batch=512,
-    verbose=True)
-    return llm
+  llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
+  # llm = LlamaCpp(model_path="./models/llama-2-7b-chat.Q2_K.gguf", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
+  return llm
 
 llm = load_llm()
 
 # Get Answer From LLM
-def get_answer_from_llm(content, prompt):
-  answer_prompt_template = """ You are very intelligent person. Understand the context provided. And answer the following question. But dont go out of the context. Context : """ + content  + """ Question:  {question} Answer :  . Return a string which is answer"""
-  template = PromptTemplate(template=answer_prompt_template, input_variables=["question"])
-  llm_chain = LLMChain(prompt=template, llm=llm)
-  result = llm_chain.run(prompt)
-  print(result)
+def get_answer_from_llm(content, question):
+  answer_prompt_template = """ 
+  You are very intelligent person. Understand the context provided. 
+  And answer the following question. But dont go out of the context. 
+  Context : """ + content  +  """ 
+  Question: """ +  question + """ 
+  Answer :  
+  Return a string which is answer
+  """
+  print("TEMPLATE:", answer_prompt_template)
+  result = llm(answer_prompt_template)
+  print("RESULT:", result)
   return result
-
+  
 # Get Answer From LLM
-def get_summary_from_llm(content, prompt):
+def get_summary_from_llm(content, query):
   summary_prompt_template = """ You are very intelligent person. Understand the context provided. And Summarize it in bullet points. But dont go out of the context. Context : """ + content  + """ Summary :  . Return a string which is answer"""
-  template = PromptTemplate(template=summary_prompt_template, input_variables=["question"])
-  llm_chain = LLMChain(prompt=template, llm=llm)
-  result = llm_chain.run(prompt)
-  print(result)
+  result = llm(summary_prompt_template)
+  print("RESULT:", result)
   return result
 
 
@@ -275,18 +279,19 @@ def answer(payload: SearchPayload):
     content = ''
     results = get_search_results(payload.query)
     for result in results:
-      content = content + ' ' + result[0]
+      content = content + ' ' + result[1]
+    print(content)
     answer = get_answer_from_llm(content, payload.query)
     return answer
 
-@app.post("/llm")
-def llm(payload: LLMPayload):
-    content = ''
-    results = get_search_results(payload.query)
-    for result in results:
-      content = content + ' ' + result[0]
-    answer = get_answer_from_llm(payload.template, content, payload.query)
-    return answer
+# @app.post("/llm")
+# def llm(payload: LLMPayload):
+#     content = ''
+#     results = get_search_results(payload.query)
+#     for result in results:
+#       content = content + ' ' + result[0]
+#     answer = get_answer_from_llm(payload.template, content, payload.query)
+#     return answer
 
 @app.post("/file/content")
 def fileContent(payload: FilePayload):
@@ -301,3 +306,12 @@ def storeFileEmbeddings(payload: FilePayload):
     #! Update this UUID Dynamically
     result_store = store_embeddings('9fd801e1-aa4c-49dc-bd96-19ab7dbcc8bd', result['content'], embeddings)
     return result_store
+
+
+# curl -X 'POST' \
+#   'http://localhost:5005/answer' \
+#   -H 'accept: application/json' \
+#   -H 'Content-Type: application/json' \
+#   -d '{
+#   "query": "Who is speaker of parliament"
+# }'
