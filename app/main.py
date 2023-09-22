@@ -282,8 +282,9 @@ def answer(payload: SearchPayload):
     for result in results:
       content = content + ' ' + result[1]
     print(content)
-    # answer = get_answer_from_llm(content, payload.query)
-    return StreamingResponse(get_answer_from_llm(content, payload.query))
+    answer = get_answer_from_llm(content, payload.query)
+    return answer
+    # return StreamingResponse(get_answer_from_llm(content, payload.query))
 
 # @app.post("/llm")
 # def llm(payload: LLMPayload):
