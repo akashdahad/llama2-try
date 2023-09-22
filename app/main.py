@@ -114,7 +114,7 @@ def store_embeddings(content_id, docs, embeddings):
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 3")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 2")
   results = conn.fetchall()
   return results
 
@@ -129,6 +129,7 @@ llm = load_llm()
 def get_answer_from_llm(content, question):
   print("CONTENT:", len(content))
   answer_prompt_template = """ 
+  <<INSTRUCTIONS>>
   You are very intelligent and intellectually sound person, You can Understand the context provided.
   After understanding the context, answer the question. 
   If there are tables and stats provide make sure you explain them and include them in your answer.
@@ -136,13 +137,18 @@ def get_answer_from_llm(content, question):
   Read the context carefully and completely and provide the answer.
   Give Answers as you are explaining the given content. 
   Your answer should be in complete sentences, detailed and explain the question correctly. 
-  Give Answer in around 200 words. Also Answer should form a paragraph.
+  Give Answer in around 300 words. Also Answer should form a paragraph.
+  Do not go Outside the context.
 
-  Context : """ + content[:6000]  +  """ 
+  <<Context>> 
+  
+  """ + content[:6000]  +  """ 
 
-  Question: """ +  question + """ 
+  <<Question>>
+  
+  """ +  question + """ 
 
-  Answer :  
+  <<Answer>>
 
   Return a string which is answer
   """
@@ -320,8 +326,9 @@ def answer(payload: SearchPayload):
     content = ''
     results = get_search_results(payload.query)
     for result in results:
+      print('---------------------------------------')
+      print(result)
       content = content + ' ' + result[1]
-    print(content)
     answer = get_answer_from_llm(content, payload.query)
     return answer
     # return StreamingResponse(get_answer_from_llm(content, payload.query))
