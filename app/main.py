@@ -120,7 +120,7 @@ def get_search_results(query):
 
 # Load LLM
 def load_llm():
-  llm = LlamaCpp(model_path="./models/llama-2-13b.Q6_K.gguf", n_ctx=3000, n_gpu_layers=32, n_batch=512, verbose=True)
+  llm = LlamaCpp(model_path="./models/llama-2-7b.Q8_0.gguf", n_ctx=3000, n_gpu_layers=43, n_batch=512, verbose=True)
   return llm
 
 llm = load_llm()
@@ -134,7 +134,7 @@ def get_answer_from_llm(content, question):
   Do not make up answer or guess.
   Read the context carefully and completely and provide the answer.
 
-  Context : """ + content  +  """ 
+  Context : """ + content[:6000]  +  """ 
 
   Question: """ +  question + """ 
 
@@ -194,6 +194,24 @@ def generate_synopsis(text, min, max):
     return summary[0]['summary_text']
 
 # Generate Synopsis Recursively for Large Text
+def synopsis_generator_pre_for_llm(text):
+  if(len(text) < 6000):
+    return generate_synopsis(text, 300, 450)
+  chunks = split_data(text, 6000)
+  synopsis = ''
+  for chunk in chunks:
+    synopsis = synopsis + " " + generate_synopsis(chunk, 30, 100)
+    print("Synopsis Length:", len(synopsis))
+  if len(synopsis) > 6000:
+    print("RE STARTING ---> ", len(synopsis))
+    synopsis = synopsis_generator_pre_for_llm(synopsis)
+  else:  
+    synopsis = generate_synopsis(synopsis, 300, 450)
+  print("FINAL LENGTH ---> ", len(synopsis))
+  return synopsis
+
+
+# Generate Synopsis Recursively for Large Text
 def synopsis_generator(text):
   if(len(text) < 3000):
     return generate_synopsis(text, 100, 300)
@@ -209,6 +227,7 @@ def synopsis_generator(text):
     synopsis = generate_synopsis(synopsis, 100, 300)
   print("FINAL LENGTH ---> ", len(synopsis))
   return synopsis
+
 
 def summary_generator_per_page(texts):
   summary = []
@@ -233,7 +252,7 @@ def get_summary(url):
 
 def get_summary_in_points(url):
   content = extract_data_from_file(url)
-  content = synopsis_generator(content['content'])
+  content = synopsis_generator_pre_for_llm(content['content'])
   summary = get_summary_from_llm(content)
   return summary
 
