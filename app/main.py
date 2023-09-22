@@ -133,6 +133,8 @@ def get_answer_from_llm(content, question):
   And answer the following question. But dont go out of the context. 
   Do not make up answer or guess.
   Read the context carefully and completely and provide the answer.
+  Give Answers as you are explaining the given content. 
+  Just tell the answer
 
   Context : """ + content[:6000]  +  """ 
 
@@ -150,9 +152,10 @@ def get_answer_from_llm(content, question):
 # Get Answer From LLM
 def get_summary_from_llm(content):
   summary_prompt_template = """ 
-  You are very intelligent person. 
-  Understand the context provided.
-   And Summarize it in bullet points. 
+   You are very intelligent person. 
+   Understand the context provided.
+   And Summarize it in bullet points.
+   Give Answers as you are explaining the given content. 
    But dont go out of the context. 
    Context : """ + content  + """ 
    Summary :  . 
@@ -197,7 +200,7 @@ def generate_synopsis(text, min, max):
 def synopsis_generator_pre_for_llm(text):
   if(len(text) < 6000):
     return generate_synopsis(text, 300, 450)
-  chunks = split_data(text, 6000)
+  chunks = split_data(text, 3000)
   synopsis = ''
   for chunk in chunks:
     synopsis = synopsis + " " + generate_synopsis(chunk, 30, 100)
