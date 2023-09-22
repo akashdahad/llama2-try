@@ -114,13 +114,13 @@ def store_embeddings(content_id, docs, embeddings):
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 4")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 5")
   results = conn.fetchall()
   return results
 
 # Load LLM
 def load_llm():
-  llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
+  llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin", n_ctx=4096, n_gpu_layers=32, n_batch=512, verbose=True)
   # llm = LlamaCpp(model_path="./models/llama-2-7b-chat.Q2_K.gguf", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
   return llm
 
