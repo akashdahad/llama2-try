@@ -114,14 +114,14 @@ def store_embeddings(content_id, docs, embeddings):
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 5")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 4")
   results = conn.fetchall()
   return results
 
 # Load LLM
 def load_llm():
-  llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
-  # llm = LlamaCpp(model_path="./models/llama-2-7b-chat.Q2_K.gguf", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
+  # llm = LlamaCpp(model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
+  llm = LlamaCpp(model_path="./models/llama-2-7b-chat.Q2_K.gguf", n_ctx=2048, n_gpu_layers=32, n_batch=512, verbose=True)
   return llm
 
 llm = load_llm()
@@ -147,7 +147,6 @@ def get_summary_from_llm(content):
   result = llm(summary_prompt_template)
   print("RESULT:", result)
   return result
-
 
 # Pre Process Text
 def pre_process(text):
@@ -306,7 +305,7 @@ def storeFileEmbeddings(payload: FilePayload):
     chunks = split_data(result['content'], 2000)
     embeddings = create_embeddings(chunks)
     #! Update this UUID Dynamically
-    result_store = store_embeddings('9fd801e1-aa4c-49dc-bd96-19ab7dbcc8bd', result['content'], embeddings)
+    result_store = store_embeddings('9fd801e1-aa4c-49dc-bd96-19ab7dbcc8bd', chunks, embeddings)
     return result_store
 
 
