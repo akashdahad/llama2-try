@@ -117,8 +117,7 @@ def get_search_results(query):
 # Load LLM
 def load_llm():
     llm = LlamaCpp(
-    model_path="./models/llama-2-7b-32k-instruct.ggmlv3.q8_0.bin",
-    # model_path="./models/llama-2-7b-chat.ggmlv3.q8_0.bin",
+    model_path="./models/llama-2-7b-chat.ggmlv3.q2_K.bin",
     n_gpu_layers=32,
     n_batch=512,
     verbose=True)
