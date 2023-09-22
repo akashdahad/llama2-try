@@ -129,12 +129,12 @@ llm = load_llm()
 def get_answer_from_llm(content, question):
   print("CONTENT:", len(content))
   answer_prompt_template = """ 
-  You are very intelligent person. Understand the context provided. 
-  And answer the following question. But dont go out of the context. 
+  You are very intelligent and intellectually sound person, You can Understand the context provided.
+  After understanding the context, answer the question. 
   Do not make up answer or guess.
   Read the context carefully and completely and provide the answer.
   Give Answers as you are explaining the given content. 
-  Just tell the answer
+  Your answer should be in complete sentences, detailed and explain the question correctly. 
 
   Context : """ + content[:6000]  +  """ 
 
@@ -162,6 +162,7 @@ def get_summary_from_llm(content):
    Return a string which is answer
    
    """
+  print("TEMPLATE:", summary_prompt_template)
   result = llm(summary_prompt_template)
   print("RESULT:", result)
   return result
@@ -211,6 +212,7 @@ def synopsis_generator_pre_for_llm(text):
   else:  
     synopsis = generate_synopsis(synopsis, 300, 450)
   print("FINAL LENGTH ---> ", len(synopsis))
+  print("SUM SYNOPSIS:", synopsis)
   return synopsis
 
 
