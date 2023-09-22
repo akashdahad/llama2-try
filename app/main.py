@@ -25,7 +25,7 @@ import spacy
 
 
 #? To Start the server
-#? python3 -m uvicorn main:app --reload 
+#? python3 -m uvicorn main:app --reload --port 5005
 
 app = FastAPI()
 
@@ -126,12 +126,23 @@ def load_llm():
 llm = load_llm()
 
 # Get Answer From LLM
-def get_answer_from_llm(template_param, content, prompt):
-  template = PromptTemplate(template=template_param, input_variables=["context", "question"])
+def get_answer_from_llm(content, prompt):
+  answer_prompt_template = """ You are very intelligent person. Understand the context provided. And answer the following question. But dont go out of the context. Context : """ + content  + """ Question:  {question} Answer :  . Return a string which is answer"""
+  template = PromptTemplate(template=answer_prompt_template, input_variables=["question"])
   llm_chain = LLMChain(prompt=template, llm=llm)
-  result = llm_chain.run(context = content, question = prompt)
+  result = llm_chain.run(prompt)
   print(result)
   return result
+
+# Get Answer From LLM
+def get_summary_from_llm(content, prompt):
+  summary_prompt_template = """ You are very intelligent person. Understand the context provided. And Summarize it in bullet points. But dont go out of the context. Context : """ + content  + """ Summary :  . Return a string which is answer"""
+  template = PromptTemplate(template=summary_prompt_template, input_variables=["question"])
+  llm_chain = LLMChain(prompt=template, llm=llm)
+  result = llm_chain.run(prompt)
+  print(result)
+  return result
+
 
 # Pre Process Text
 def pre_process(text):
@@ -204,8 +215,7 @@ def get_summary(url):
 def get_summary_in_points(url):
   content = extract_data_from_file(url)
   content = content['content'][:80000]
-  summary_template = """ You are very intelligent person. Understand the context provided. And Summarize the Context in bullet points. But dont go out of the context. Context : {context}. Summary:  . Return a string which is answer"""
-  summary = get_answer_from_llm(summary_template, content, payload.query)
+  summary = get_summary_from_llm(content, payload.query)
   return summary
 
 def get_synopsis(url):
@@ -262,12 +272,11 @@ def synopsis(payload: FilePayload):
 
 @app.post("/answer")
 def answer(payload: SearchPayload):
-    answer_prompt_template = """ You are very intelligent person. Understand the context provided. And answer the following question. But dont go out of the context. Context : {context} Question:  {question} Answer :  . Return a string which is answer"""
     content = ''
     results = get_search_results(payload.query)
     for result in results:
       content = content + ' ' + result[0]
-    answer = get_answer_from_llm(answer_prompt_template, content, payload.query)
+    answer = get_answer_from_llm(content, payload.query)
     return answer
 
 @app.post("/llm")
