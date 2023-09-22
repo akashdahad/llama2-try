@@ -16,6 +16,7 @@ from nltk.tokenize import sent_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers import pipeline
+from fastapi.responses import StreamingResponse
 import torch
 import psycopg2
 import pdfplumber
@@ -174,7 +175,7 @@ def tag_text(input_text, tags):
 # Generate Synopsis
 def generate_synopsis(text, min, max):
     print("Length:", len(text))
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=0)
     summary = summarizer(text, max_length=max, min_length=min, do_sample=False)
     return summary[0]['summary_text']
 
@@ -218,7 +219,7 @@ def get_summary(url):
 
 def get_summary_in_points(url):
   content = extract_data_from_file(url)
-  content = content['content'][:80000]
+  content = synopsis_generator(content['content'])
   summary = get_summary_from_llm(content)
   return summary
 
@@ -281,8 +282,8 @@ def answer(payload: SearchPayload):
     for result in results:
       content = content + ' ' + result[1]
     print(content)
-    answer = get_answer_from_llm(content, payload.query)
-    return answer
+    # answer = get_answer_from_llm(content, payload.query)
+    return StreamingResponse(get_answer_from_llm(content, payload.query))
 
 # @app.post("/llm")
 # def llm(payload: LLMPayload):
