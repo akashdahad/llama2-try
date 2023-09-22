@@ -141,7 +141,7 @@ def get_answer_from_llm(content, question):
   return result
   
 # Get Answer From LLM
-def get_summary_from_llm(content, query):
+def get_summary_from_llm(content):
   summary_prompt_template = """ You are very intelligent person. Understand the context provided. And Summarize it in bullet points. But dont go out of the context. Context : """ + content  + """ Summary :  . Return a string which is answer"""
   result = llm(summary_prompt_template)
   print("RESULT:", result)
@@ -219,7 +219,7 @@ def get_summary(url):
 def get_summary_in_points(url):
   content = extract_data_from_file(url)
   content = content['content'][:80000]
-  summary = get_summary_from_llm(content, payload.query)
+  summary = get_summary_from_llm(content)
   return summary
 
 def get_synopsis(url):
