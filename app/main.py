@@ -131,6 +131,7 @@ def get_answer_from_llm(content, question):
   answer_prompt_template = """ 
   You are very intelligent and intellectually sound person, You can Understand the context provided.
   After understanding the context, answer the question. 
+  If there are tables and stats provide make sure you explain them and include them in your answer.
   Do not make up answer or guess.
   Read the context carefully and completely and provide the answer.
   Give Answers as you are explaining the given content. 
