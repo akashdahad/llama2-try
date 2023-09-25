@@ -49,7 +49,7 @@ PORT = '5432'
 connection = psycopg2.connect(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
 conn = connection.cursor()
 
-model = SentenceTransformer('bert-base-nli-mean-tokens')
+model = SentenceTransformer('sentence-transformers/msmarco-distilbert-base-tas-b')
 
 # Extract Text
 def extract_data_from_file(url):
@@ -60,7 +60,7 @@ def extract_data_from_file(url):
       data = page.extract_text(x_tolerance=3, y_tolerance=3)
       if(type(data) == str):
         text = text + ' ' + data
-  return { "content": text }
+  return { "content": text.lower() }
 
 # Extract Text in Array
 def extract_data_from_file_array(url):
@@ -113,8 +113,8 @@ def store_embeddings(content_id, docs, embeddings):
 
 # Get Search Results
 def get_search_results(query):
-  query_embeddings = model.encode([query])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 2")
+  query_embeddings = model.encode([query.lower()])[0]
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <=> '{query_embeddings.tolist()}' LIMIT 2")
   results = conn.fetchall()
   return results
 
@@ -127,33 +127,20 @@ llm = load_llm()
 
 # Get Answer From LLM
 def get_answer_from_llm(content, question):
-  print("CONTENT:", len(content))
-  answer_prompt_template = """ 
-  <<INSTRUCTIONS>>
-  You are very intelligent and intellectually sound person, You can Understand the context provided.
-  After understanding the context, answer the question. 
-  If there are tables and stats provide make sure you explain them and include them in your answer.
-  Do not make up answer or guess.
-  Read the context carefully and completely and provide the answer.
-  Give Answers as you are explaining the given content. 
-  Your answer should be in complete sentences, detailed and explain the question correctly. 
-  Give Answer in around 300 words. Also Answer should form a paragraph.
-  Do not go Outside the context.
+  prompt_template = f"""
+  The User asking the question is a mathematics teacher. He teaches to 7 grade students. Understand his level and answer accordingly. 
+  Use the following pieces of context to answer the question at the end.
+   Make sure you form complete sentences and give correct explanation. 
+   If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
-  <<Context>> 
-  
-  """ + content[:6000]  +  """ 
+  {content}
 
-  <<Question>>
-  
-  """ +  question + """ 
+  Question: {question}
+  Answer:
 
-  <<Answer>>
-
-  Return a string which is answer
   """
-  print("TEMPLATE:", answer_prompt_template)
-  result = llm(answer_prompt_template)
+  print("TEMPLATE:", prompt_template)
+  result = llm(prompt_template)
   print("RESULT:", result)
   return result
   
@@ -201,9 +188,19 @@ def tag_text(input_text, tags):
 # Generate Synopsis
 def generate_synopsis(text, min, max):
     print("Length:", len(text))
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=0)
-    summary = summarizer(text, max_length=max, min_length=min, do_sample=False)
-    return summary[0]['summary_text']
+    try:
+      # summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=0)
+      summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+      summary = summarizer(text, max_length=max, min_length=min, do_sample=False)
+      return summary[0]['summary_text']
+    except:
+      try:
+        summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+        summary = summarizer(text[:3000], max_length=max, min_length=min, do_sample=False)
+        return summary[0]['summary_text']
+      except:
+        return ' '
+
 
 # Generate Synopsis Recursively for Large Text
 def synopsis_generator_pre_for_llm(text):
@@ -350,7 +347,9 @@ def fileContent(payload: FilePayload):
 @app.post("/file/content/storeEmbeddings")
 def storeFileEmbeddings(payload: FilePayload):
     result = extract_data_from_file(payload.file_url)
-    chunks = split_data(result['content'], 2000)
+    # Do not Go Above 1000 While Creating Embeddings - Because the Model Truncate The Text After 512 Words, Bute Ideally should be 250 Words.
+    # Considering 4 Characters per Words - Setting Limit of 1000 Characters
+    chunks = split_data(result['content'], 1000)
     embeddings = create_embeddings(chunks)
     #! Update this UUID Dynamically
     result_store = store_embeddings('9fd801e1-aa4c-49dc-bd96-19ab7dbcc8bd', chunks, embeddings)
