@@ -63,7 +63,7 @@ def get_search_results(query):
   connection = psycopg2.connect(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
   conn = connection.cursor()
   query_embeddings = model.encode([query.lower()])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 4")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <=> '{query_embeddings.tolist()}' LIMIT 4")
   results = conn.fetchall()
   conn.close()
   connection.close()
