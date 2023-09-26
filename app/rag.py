@@ -39,19 +39,20 @@ callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 
 
 # Load Models
-llm = LlamaCpp(model_path=llm_model, n_gpu_layers=43, n_batch=256, n_ctx=1024, callback_manager=callback_manager, verbose=True)
+llm = LlamaCpp(model_path=llm_model, n_gpu_layers=43, n_batch=256, n_ctx=2048, callback_manager=callback_manager, verbose=True)
 model = SentenceTransformer(embedding_model)
-embed_model = HuggingFaceEmbeddings(model_name=embed_model_id, encode_kwargs={'batch_size': 32})
+embed_model = HuggingFaceEmbeddings(model_name=embed_model)
 
 prompt_template_qa = """
 
 Use the following pieces of context to answer the question at the end. 
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
+You should not go out of the context to answer the question.
+Understand the Context Provided and Understand the Question. Then Only Answer.
 
 {context}
 
 Question: {question}
-Answer in English:
 
 """
 
