@@ -39,7 +39,7 @@ callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 
 
 # Load Models
-llm = LlamaCpp(model_path=llm_model, n_gpu_layers=43, n_batch=256, n_ctx=2048, callback_manager=callback_manager, verbose=True)
+llm = LlamaCpp(model_path=llm_model, n_gpu_layers=43, n_batch=512, n_ctx=4096, callback_manager=callback_manager, verbose=True)
 model = SentenceTransformer(embedding_model)
 embed_model = HuggingFaceEmbeddings(model_name=embedding_model)
 
@@ -48,7 +48,9 @@ prompt_template_qa = """
 Use the following pieces of context to answer the question at the end. 
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
 You should not go out of the context to answer the question.
-Understand the Context Provided and Understand the Question. Then Only Answer.
+Understand the Context Provided and Understand the Question and then Only Answer.
+
+Context:
 
 {context}
 
@@ -62,7 +64,7 @@ def get_search_results(query):
   connection = psycopg2.connect(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
   conn = connection.cursor()
   query_embeddings = model.encode([query.lower()])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 2")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 3")
   results = conn.fetchall()
   conn.close()
   connection.close()
