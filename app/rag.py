@@ -27,7 +27,8 @@ PORT = '5432'
 
 
 # Models 
-embedding_model = 'bert-base-nli-mean-tokens'
+# embedding_model = 'bert-base-nli-mean-tokens'
+embedding_function = 'sentence-transformers/msmarco-distilbert-base-tas-b'
 # Local
 llm_model = './models/llama-2-7b.Q2_K.gguf'
 # Server
