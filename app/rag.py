@@ -29,9 +29,9 @@ PORT = '5432'
 # Models 
 embedding_model = 'bert-base-nli-mean-tokens'
 # Local
-# llm_model = './models/llama-2-7b.Q2_K.gguf'
+llm_model = './models/llama-2-7b.Q2_K.gguf'
 # Server
-llm_model = './models/llama-2-7b.Q8_0.gguf'
+# llm_model = './models/llama-2-7b.Q8_0.gguf'
 embed_model_id = 'sentence-transformers/all-MiniLM-L6-v2'
 
 # Callback Streaming Function
@@ -81,6 +81,7 @@ def search_results_as_doc_arr(query):
 def answer(query):
   print('Query: ', query)
   splits = search_results_as_doc_arr(query)
+  print(splits)
   vectorstore = Chroma.from_documents(documents=splits, embedding=embed_model)
   PROMPT = PromptTemplate(template=prompt_template_qa, input_variables=["context", "question"])
   chain_type_kwargs = {"prompt": PROMPT}
