@@ -16,7 +16,6 @@ from pydantic import BaseModel
 import torch
 import psycopg2
 
-torch.cuda.empty_cache()
 
 #* Database connection parameters
 DBNAME = 'postgres'
@@ -45,15 +44,14 @@ model = SentenceTransformer(embedding_model)
 embed_model = HuggingFaceEmbeddings(model_name=embed_model_id, encode_kwargs={'batch_size': 32})
 
 prompt_template_qa = """
-  The User is a Physics Teacher for Class 7. And has limited understanding. 
-  Maker sure you give the answers such that he can understand and resolve his questions. 
-  Use the following pieces of context to answer the question at the end.
-  If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
-  {context}
+Use the following pieces of context to answer the question at the end. 
+If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
-  Question: {question}
-  Answer:
+{context}
+
+Question: {question}
+Answer in English:
 
 """
 
@@ -63,8 +61,7 @@ def get_search_results(query):
   connection = psycopg2.connect(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
   conn = connection.cursor()
   query_embeddings = model.encode([query.lower()])[0]
-  print(query_embeddings.tolist())
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 4")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 2")
   results = conn.fetchall()
   conn.close()
   connection.close()
@@ -87,7 +84,9 @@ def answer(query):
   print('Query: ', query)
   splits = search_results_as_doc_arr(query)
   vectorstore = Chroma.from_documents(documents=splits, embedding=embed_model)
+  torch.cuda.empty_cache()
   PROMPT = PromptTemplate(template=prompt_template_qa, input_variables=["context", "question"])
+  print("PROMPT:", PROMPT)
   chain_type_kwargs = {"prompt": PROMPT}
   qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(), chain_type_kwargs=chain_type_kwargs)
   print('Processing')
