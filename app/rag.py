@@ -29,9 +29,9 @@ PORT = '5432'
 # embedding_model = 'bert-base-nli-mean-tokens'
 embedding_model = 'sentence-transformers/msmarco-distilbert-base-tas-b'
 # Local
-# llm_model = './models/llama-2-7b.Q2_K.gguf'
+llm_model = './models/llama-2-7b.Q2_K.gguf'
 # Server
-llm_model = './models/llama-2-13b.Q6_K.gguf'
+# llm_model = './models/llama-2-13b.Q6_K.gguf'
 embed_model_id = 'sentence-transformers/all-MiniLM-L6-v2'
 
 # Callback Streaming Function
