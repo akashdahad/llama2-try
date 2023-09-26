@@ -62,7 +62,7 @@ def get_search_results(query):
   connection = psycopg2.connect(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
   conn = connection.cursor()
   query_embeddings = model.encode([query.lower()])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <=> '{query_embeddings.tolist()}' LIMIT 5")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <=> '{query_embeddings.tolist()}' LIMIT 4")
   results = conn.fetchall()
   conn.close()
   connection.close()
@@ -72,6 +72,9 @@ def search_results_as_doc_arr(query):
   results = get_search_results(query)
   splits = []
   for result in results:
+    print("*" * 100)
+    print(result[1])
+    print("*" * 100)
     doc =  Document(page_content=result[1], metadata={"source": result[0]})
     splits.append(doc)
   print('Splits: ', len(splits))
@@ -81,7 +84,6 @@ def search_results_as_doc_arr(query):
 def answer(query):
   print('Query: ', query)
   splits = search_results_as_doc_arr(query)
-  print(splits)
   vectorstore = Chroma.from_documents(documents=splits, embedding=embed_model)
   PROMPT = PromptTemplate(template=prompt_template_qa, input_variables=["context", "question"])
   chain_type_kwargs = {"prompt": PROMPT}
