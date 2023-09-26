@@ -44,7 +44,10 @@ model = SentenceTransformer(embedding_model)
 embed_model = HuggingFaceEmbeddings(model_name=embed_model_id, encode_kwargs={'batch_size': 32})
 
 prompt_template_qa = """
-  The User is a Common Adult with very basic understanding. Make Sure you understand is ability and answer accordingly. If there are any statistics or data, make sure you explain those points in answer. Use the following pieces of context to answer the question at the end. Make sure you form complete sentences. Do not given broken sentences. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+  The User is a Physics Teacher for Class 7. And has limited understanding. 
+  Maker sure you give the answers such that he can understand and resolve his questions. 
+  Use the following pieces of context to answer the question at the end.
+  If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
   {context}
 
@@ -52,7 +55,6 @@ prompt_template_qa = """
   Answer:
 
 """
-
 
 # Fetch Splits for Query
 def get_search_results(query):
