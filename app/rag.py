@@ -39,7 +39,7 @@ callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 
 
 # Load Models
-llm = LlamaCpp(model_path=llm_model, n_gpu_layers=43, n_batch=1024, n_ctx=4096, callback_manager=callback_manager, verbose=True)
+llm = LlamaCpp(model_path=llm_model, n_gpu_layers=43, n_batch=256, n_ctx=1024, callback_manager=callback_manager, verbose=True)
 model = SentenceTransformer(embedding_model)
 embed_model = HuggingFaceEmbeddings(model_name=embed_model_id, encode_kwargs={'batch_size': 32})
 
