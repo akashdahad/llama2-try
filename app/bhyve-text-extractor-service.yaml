@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bhyve-text-extractor
+  namespace: bhyve-dev
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 5000
+  selector:
+    app: text-extractor
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "traefik-internal"
+    traefik.ingress.kubernetes.io/router.entrypoints: web,web-secure
+  name: bhyve-text-extractor-ingress
+  namespace: bhyve-dev
+spec:
+  entryPoints:
+    - web
+    - web-secure
+  routes:
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/viaInMemory`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/extract`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/az-answer`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/summarize`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/ViaElastic`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/GenareatedFAQAnswers`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/FAQAnswers`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+    - match: Host(`api.azdev.bhyve.io`) && PathPrefix(`/answers`)
+      kind: Rule
+      services:
+        - name: bhyve-text-extractor
+          port: 80
+  tls:
+    certResolver: dev_certificate

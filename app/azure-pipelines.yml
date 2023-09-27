@@ -1,0 +1,84 @@
+trigger:
+  branches:
+    include:
+      - azure-develop
+      - azure-main
+  tags:
+    include:
+      - refs/tags/*
+
+variables:
+  imageRepository: "text-extractor"
+  devNamespace: "bhyve-dev"
+  stageNamespace: "bhyve-stg"
+  prodNamespace: "bhyve-prod"
+
+stages:
+  - stage: Dev
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/azure-develop')
+    displayName: "Build and deploy to dev"
+    jobs:
+      - job: Build
+        displayName: "Build and deploy on DEV"
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - bash: |
+              short_hash=`git rev-parse --short=7 HEAD` 
+              echo ""
+              echo "Full git hash:  $(Build.SourceVersion)"
+              echo "Short git hash: $short_hash"
+              echo "##vso[task.setvariable variable=short_hash]$short_hash"
+            workingDirectory: $(Build.SourcesDirectory)
+            displayName: Get short git hash
+          - task: Docker@2
+            displayName: "Build and push Docker image"
+            inputs:
+              containerRegistry: bhyve-container-registry
+              repository: "$(imageRepository)"
+              command: "buildAndPush"
+              Dockerfile: "**/Dockerfile"
+              tags: $(short_hash)
+          - bash: |
+              sed -i "s|bhyveregistry.azurecr.io/$(imageRepository):latest|bhyveregistry.azurecr.io/$(imageRepository):$(short_hash)|g" $(Pipeline.Workspace)/s/$(imageRepository).yaml
+            env:
+              short_hash: $(short_hash)
+            displayName: Replace image name in deployment YAML
+          - bash: |
+              sed -i "s|namespace: namespaceVar|namespace: $namespace|g" $(Pipeline.Workspace)/s/$(imageRepository).yaml
+            env:
+              namespace: $(devNamespace)
+            displayName: Replace namespace in deployment YAML
+          - bash: |
+              cat $(Pipeline.Workspace)/s/$(imageRepository).yaml
+            displayName: Display yaml file
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: "$(Pipeline.Workspace)/s/$(imageRepository).yaml"
+              ArtifactName: "$(imageRepository).yaml"
+
+        # Deploy step to be developed further more
+      - job: Deploy
+        displayName: "Deploy to dev cluster"
+        dependsOn: Build
+        condition: succeeded()
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: DownloadBuildArtifacts@1
+            inputs:
+              buildType: "current"
+              artifactName: "$(imageRepository).yaml"
+              downloadPath: "$(Build.ArtifactStagingDirectory)"
+          - bash: |
+              ls -l $(Build.ArtifactStagingDirectory)
+            displayName: List files
+          - task: Kubernetes@1
+            displayName: "Deploy to Kubernetes cluster"
+            inputs:
+              connectionType: "Kubernetes Service Connection"
+              kubernetesServiceEndpoint: "bhyve-dev-aks-01-gpu"
+              namespace: "$(devNamespace)"
+              command: "apply"
+              arguments: "-f $(build.artifactstagingdirectory)/$(imageRepository).yaml"
+              useConfigurationFile: false

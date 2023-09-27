@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  text-extractor:
+    image: bhyveregistry.azurecr.io/text-extractor:latest
+    container_name: text-extractor
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000
+    # volumes:
+    #   - ./src:/src
