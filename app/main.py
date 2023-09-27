@@ -51,6 +51,34 @@ conn = connection.cursor()
 
 model = SentenceTransformer('sentence-transformers/msmarco-distilbert-base-tas-b')
 
+
+prompt_template_qa = """
+A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. 
+
+USER: I am teacher of physics, I teach to 7 grade students give answers which i can understand.
+
+USER: Read this Content Carefully. Consider this Content as your Source. {context}
+
+USER: {question} Answer this question from the context provided. If you dont know the answer, just say i dont know. 
+
+ASSISTANT:
+
+"""
+
+prompt_template_summary = """
+A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. 
+
+USER: I am teacher of physics, I teach to 7 grade students give answers which i can understand.
+
+USER: Read this Content Carefully. Consider this Content as your Source. {context}
+
+USER: Summarize in Bullet Points the Content Provided. Also, If there are some stats or facts remember to include them. 
+
+ASSISTANT:
+
+"""
+
+
 # Extract Text
 def extract_data_from_file(url):
   text = ''
@@ -114,51 +142,31 @@ def store_embeddings(content_id, docs, embeddings):
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query.lower()])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <=> '{query_embeddings.tolist()}' LIMIT 2")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 3")
   results = conn.fetchall()
   return results
 
 # Load LLM
 def load_llm():
-  llm = LlamaCpp(model_path="./models/llama-2-7b.Q2_K.gguf", n_ctx=3000, n_gpu_layers=43, n_batch=512, verbose=True)
+  llm = LlamaCpp(model_path="./models/vicuna-7b-cot.Q8_0.gguf", n_ctx=4096, n_gpu_layers=43, n_batch=1024, verbose=True)
+  # llm = LlamaCpp(model_path="./models/llama-2-7b.Q2_K.gguf", n_ctx=4096, n_gpu_layers=43, n_batch=512, verbose=True)
   return llm
 
 llm = load_llm()
 
 # Get Answer From LLM
 def get_answer_from_llm(content, question):
-  prompt_template = f"""
-  The User asking the question is a mathematics teacher. He teaches to 7 grade students. Understand his level and answer accordingly. 
-  Use the following pieces of context to answer the question at the end.
-   Make sure you form complete sentences and give correct explanation. 
-   If you don't know the answer, just say that you don't know, don't try to make up an answer.
-
-  {content}
-
-  Question: {question}
-  Answer:
-
-  """
-  print("TEMPLATE:", prompt_template)
-  result = llm(prompt_template)
+  PROMPT = PromptTemplate(template=prompt_template_qa, input_variables=["context", "question"])
+  llm_chain = LLMChain(prompt=PROMPT, llm=llm)
+  result = llm_chain.run(context=content, question=question)
   print("RESULT:", result)
   return result
   
 # Get Answer From LLM
 def get_summary_from_llm(content):
-  summary_prompt_template = """ 
-   You are very intelligent and intellectual person. 
-   Understand the context provided.
-   And Summarize it in bullet points.
-   Make sure you include all the important points.
-   Make sure your summaries includes all points and details. 
-   Context : """ + content  + """ 
-   Summary :  . 
-   Return a string which is answer.
-   
-   """
-  print("TEMPLATE:", summary_prompt_template)
-  result = llm(summary_prompt_template)
+  PROMPT = PromptTemplate(template=prompt_template_summary, input_variables=["context"])
+  llm_chain = LLMChain(prompt=PROMPT, llm=llm)
+  result = llm_chain.run(context=content)
   print("RESULT:", result)
   return result
 
