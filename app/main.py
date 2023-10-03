@@ -55,8 +55,6 @@ model = SentenceTransformer('sentence-transformers/msmarco-distilbert-base-tas-b
 prompt_template_qa = """
 A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. 
 
-USER: I am teacher of physics, I teach to 7 grade students give answers which i can understand.
-
 USER: Read this Content Carefully. Consider this Content as your Source. {context}
 
 USER: {question} Answer this question from the context provided. If you dont know the answer, just say i dont know. 
@@ -75,6 +73,7 @@ USER: Read this Content Carefully. Consider this Content as your Source. {contex
 USER: Summarize in Bullet Points the Content Provided. Also, If there are some stats or facts remember to include them. 
 
 ASSISTANT:
+
 
 """
 
@@ -142,13 +141,13 @@ def store_embeddings(content_id, docs, embeddings):
 # Get Search Results
 def get_search_results(query):
   query_embeddings = model.encode([query.lower()])[0]
-  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 3")
+  conn.execute(f"SELECT content_id, content FROM pg_embed ORDER BY embedding <-> '{query_embeddings.tolist()}' LIMIT 4")
   results = conn.fetchall()
   return results
 
 # Load LLM
 def load_llm():
-  llm = LlamaCpp(model_path="./models/vicuna-7b-cot.Q8_0.gguf", n_ctx=4096, n_gpu_layers=43, n_batch=1024, verbose=True)
+  llm = LlamaCpp(model_path="./models/Vicuna-13B-CoT.Q8_0.gguf", n_ctx=4096, n_gpu_layers=50, n_batch=512, verbose=True)
   # llm = LlamaCpp(model_path="./models/llama-2-7b.Q2_K.gguf", n_ctx=4096, n_gpu_layers=43, n_batch=512, verbose=True)
   return llm
 
@@ -198,7 +197,7 @@ def generate_synopsis(text, min, max):
     print("Length:", len(text))
     try:
       # summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=0)
-      summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+      # summarizer = pipeline("summarization", model="facebook/bart-large-cnn") 
       summary = summarizer(text, max_length=max, min_length=min, do_sample=False)
       return summary[0]['summary_text']
     except:
@@ -212,14 +211,14 @@ def generate_synopsis(text, min, max):
 
 # Generate Synopsis Recursively for Large Text
 def synopsis_generator_pre_for_llm(text):
-  if(len(text) < 6000):
+  if(len(text) <= 3000):
     return generate_synopsis(text, 300, 450)
   chunks = split_data(text, 3000)
   synopsis = ''
   for chunk in chunks:
     synopsis = synopsis + " " + generate_synopsis(chunk, 30, 100)
     print("Synopsis Length:", len(synopsis))
-  if len(synopsis) > 6000:
+  if len(synopsis) > 3000:
     print("RE STARTING ---> ", len(synopsis))
     synopsis = synopsis_generator_pre_for_llm(synopsis)
   else:  
@@ -362,12 +361,3 @@ def storeFileEmbeddings(payload: FilePayload):
     #! Update this UUID Dynamically
     result_store = store_embeddings('9fd801e1-aa4c-49dc-bd96-19ab7dbcc8bd', chunks, embeddings)
     return result_store
-
-
-# curl -X 'POST' \
-#   'http://localhost:5005/answer' \
-#   -H 'accept: application/json' \
-#   -H 'Content-Type: application/json' \
-#   -d '{
-#   "query": "Who is speaker of parliament"
-# }'
